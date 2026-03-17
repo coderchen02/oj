@@ -1,0 +1,15 @@
+// 3.17 20点02分
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n=nums.size();
+        int left=0,right=n-1;
+        while(left<right){
+            int mid=(left+right)/2;
+            if(nums[mid]>target) right=mid-1;
+            else if(nums[mid]<target) left=right+1;
+            else return mid;
+        }
+        return -1;
+    }
+};
